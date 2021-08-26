@@ -34,7 +34,7 @@ const Footer = () => {
       <div className="addressPlace">
         <div className="rateYearAndTraditions">
           <div className="goldRate">
-            <h3>Gold rate today (old gold): {15}</h3>
+            <h3>Gold rate today (old gold): {1524}</h3>
             <br />
             <p>Information on buying gold</p>
             <p>data protection</p>
@@ -47,7 +47,7 @@ const Footer = () => {
               <div className="fieldsSections">
                 <div className="inputField">
                   <input type="email" className="registration" />
-                  <input type="submit" className="registrationButton"/>
+                  <input type="submit" className="registrationButton" />
                 </div>
               </div>
             </div>

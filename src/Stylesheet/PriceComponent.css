@@ -78,7 +78,7 @@
   flex-direction: column;
   border: 1px solid black;
   width: 50%;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 .secondPriceHeading {
@@ -101,69 +101,64 @@
   justify-content: center;
 }
 .exactResult {
-  border: 5px solid black;
+  border: 2px solid black;
   text-align: center;
   display: grid;
   place-items: center;
   height: 100%;
-  line-height: 3;
-  width: 40%;
+  line-height: 2;
+  width: 100%;
   font-size: 50px;
-  border-radius: 100px;
+  border-radius: 10px;
   background-color: white;
-  -webkit-box-shadow: 1px 6px 18px 5px rgba(0, 0, 0, 0.61);
-  box-shadow: 1px 6px 18px 5px rgba(95, 93, 67, 0.61);
+  /* -webkit-box-shadow: 1px 6px 18px 5px rgba(0, 0, 0, 0.61);
+  box-shadow: 1px 6px 18px 5px rgba(95, 93, 67, 0.61); */
+  /* box-shadow: -2px 4px 37px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -2px 4px 37px 6px rgba(39, 35, 35, 0.5); */
 }
 
 /* ====================================================
           @media query for responsiveness
 ==================================================== */
-
+/* 
 @media screen and (max-width: 1250px) {
   .exactResult {
-    /* height: 170px; */
     width: 55%;
   }
 }
 
 @media screen and (max-width: 1030px) {
   .exactResult {
-    /* height: 175px; */
     width: 60%;
   }
 }
 
 @media screen and (max-width: 972px) {
   .exactResult {
-    /* height: 100%; */
     width: 85%;
   }
 }
 
 @media screen and (max-width: 824px) {
   .exactResult {
-    height: 100%;
     width: 45%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .exactResult {
-    height: 100%;
     width: 60%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .exactResult {
-    height: 100%;
     width: 80%;
   }
 }
 
 @media screen and (max-width: 350px) {
   .exactResult {
-    height: 95%;
     width: 100%;
   }
-}
+} */

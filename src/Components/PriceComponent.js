@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../Stylesheet/PriceComponent.css';
 
 const PriceComponent = () => {
-  const [price, setPrice] = useState(15);
+  // const [price, setPrice] = useState(15);
+  const [price, setPrice] = useState();
   const [gram, setGram] = useState(0);
   const [nineHunderdCoins, setNineHundredCoins] = useState(900);
   const [sevenFiftyGold, setSevenFiftyGold] = useState(750);
@@ -14,7 +15,7 @@ const PriceComponent = () => {
   const [active, setActive] = useState(0);
   const [newGram, setNewGram] = useState();
   const [newValue, setNewValue] = useState(0);
-  const [webapi, setwebapi] = useState([])
+  const [webapi, setwebapi] = useState([]);
 
   const priceHandling = (e) => {
     setPrice(e.target.value);
@@ -47,42 +48,53 @@ const PriceComponent = () => {
   };
 
   const localdatastore = () => {
-    localStorage.setItem('webapidata', webapi)
-  }
-
-
-
+    localStorage.setItem('webapidata', webapi);
+  };
 
   // async function fetchdata() {
-  //   const response = await fetch('https://metals-api.com/api/latest?access_key=3cbwhntaxstgl8nljb49jm16ol3jdkdhzbdltxe0vk4zv5nabyqvj7a48p0m&base=EUR&symbols=XAU');
+  //   const response = await fetch(
+  //     'https://jsonplaceholder.typicode.com/todos/1',
+  //   );
   //   const data = await response.json();
-  //   setwebapi(data)
-  // localdatastore()
-  // console.log(webapi.rates.XAU)
+  //   setwebapi(data);
+  //   // console.log(webapi.rates.XAU);
+  //   // localStorage.setItem('Rates', webapi.rates.XAU);
   // }
 
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        'https://metals-api.com/api/latest?access_key=rcgf88qitlo794lf9dkqo09n6lslkyfx7t23pcciee3bp41otjfnmhcty86l&base=EUR&symbols=XAU',
+      );
+      console.log('response: ', response);
+      let data = await response.json();
+      setwebapi(data);
+      // localStorage.setItem('Rates', webapi.rates.XAU);
+      console.log('Data', webapi.XAU);
+      setPrice(data.rates.XAU);
+      console.log(data);
+      console.log('from state', webapi);
+    }
+
+    fetchData();
+  }, []);
 
   function getTime() {
     let today = new Date();
-    let hours = today.getHours()
-    let minutes = today.getMinutes()
-    let seconds = today.getSeconds()
-    let currenttime = `${hours}:${minutes}:${seconds}`
-    console.log(currenttime)
-    localStorage.setItem("time", currenttime)
-    let currentnewdata = localStorage.getItem("time", currenttime)
-    // fetchdata()
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+    let currenttime = `${hours}:${minutes}:${seconds}`;
+    console.log(currenttime);
+    localStorage.setItem('time', currenttime);
+    let currentnewdata = localStorage.getItem('time', currenttime);
   }
-
 
   function Nineam() {
-    getTime()
-
+    getTime();
   }
 
-  Nineam()
-
-
+  Nineam();
 
   return (
     <div className="priceMain">
@@ -103,7 +115,7 @@ const PriceComponent = () => {
               type="number"
               placeholder="Please enter the weights in grams"
               onChange={gramWeightHandling}
-            // onChange={(e) => (e.target.value)}
+              // onChange={(e) => (e.target.value)}
             />
             <br />
             <button className="btn" onClick={firstbtn}>
@@ -127,14 +139,16 @@ const PriceComponent = () => {
         </div>
         <div className="resultDisplayer">
           <div className="heading goldRatesecondHeading ">
-            Revised Jewelry Gold: €{inputedGoldPrice}
+            Revised Jewelry Gold: €{Math.round(inputedGoldPrice)}
             <br />
-            <h3 className="secondPriceHeading">Current Jewelry Gold {15} gram</h3>
+            <h3 className="secondPriceHeading">
+              Current Jewelry Gold {Math.round(webapi.rates.XAU)} gram
+              {/* Current Jewelry Gold {15} gram */}
+            </h3>
           </div>
           <div className="resultOutput">
             <div className="exactResult">
-              {(inputedGoldPrice / 1000) * active}€
-
+              {Math.round((inputedGoldPrice / 1000) * active)}€
             </div>
           </div>
           <h3 className="secondPriceHeading">Price of {active} gram</h3>
