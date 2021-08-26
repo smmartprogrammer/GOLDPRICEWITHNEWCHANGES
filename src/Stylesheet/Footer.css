@@ -1,0 +1,103 @@
+
+.footer {
+  width: 100%;
+  height: 500px;
+  background-color: #f0f0f0;
+}
+
+.networkIcons {
+  padding-top: 80px;
+  margin-left: 23%;
+  margin-right: 23%;
+  display: flex;
+}
+.imageIcon {
+  height: 40%;
+  padding: 20px;
+}
+.imageIcon > img {
+  max-width: 100%;
+  height: 60px;
+  object-fit: fill;
+}
+.rateYearAndTraditions {
+  display: flex;
+  padding-top: 50px;
+  margin-left: 18%;
+  margin-right: 18%;
+  /* border: 1px solid black; */
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+.goldRate {
+  flex: 1;
+  /* border: 1px solid black; */
+}
+.goldRate > h3 {
+  font-weight: 450;
+}
+.goldRate > p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.invitation {
+  flex: 2;
+  /* border: 1px solid black; */
+  padding: 8px;
+  
+}
+.invitation > h3 {
+  font-weight: 450;
+}
+.registration {
+  width: 100%;
+  background-color: lightgray;
+  border: none;
+  outline: none;
+  padding-left: 10px ;
+}
+.fieldsSections {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputField {
+  margin-top: 5px;
+  flex: 70%;
+  height: 35px;
+  display: flex;
+  border: 1px solid black;
+}
+.inputSecondField {
+  flex: 25%;
+  border: 1px solid black;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+::placeholder {
+  margin-right: 5px;
+}
+
+.registrationButton {
+  flex: 30%;
+  border: none;
+  outline: none;
+  cursor: pointer;  
+  background-color: black;
+  color: white;
+}
+.registrationButton > p {
+  font-size: 13px;
+}
+.traditionyears {
+  flex: 1;
+  /* border: 1px solid black; */
+}
+.traditionyears > h3 {
+  font-weight: 450;
+}
+.traditionyears > p {
+  font-size: 14px;
+}

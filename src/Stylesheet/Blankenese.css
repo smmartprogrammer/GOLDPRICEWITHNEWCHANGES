@@ -1,0 +1,30 @@
+.blankense {
+  margin-top: 60px;
+  margin-left: 23%;
+  margin-right: 23%;
+}
+.blankense > h4 {
+  letter-spacing: 0.1rem;
+  font-size: 25px;
+}
+.blankenseUpdate {
+  font-size: 14px;
+}
+.blankense > h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+}
+.moreOptionsPara {
+  font-weight: 500;
+}
+
+.goldImg {
+  width: 100%;
+  height: auto;
+}

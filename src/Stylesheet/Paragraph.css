@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.mainParaBox {
+  margin-top: 60px;
+  margin-left: 23%;
+  margin-right: 23%;
+  /* border: 1px solid black; */
+}
+.FirstHeading {
+  font-size: 2rem;
+  font-weight: 480;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.1rem;
+}
+.secondParabox {
+  margin-top: 40px;
+}
+.secondParabox > h4 {
+  letter-spacing: 0.1rem;
+}
+
+.firstPara {
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.moreinforLInk {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+}
+/* .moreinforLInk::after {
+  width: fit-content;
+  height: 5px;
+  color: black;
+  background-color: black;
+} */
+.thirdBox > h2 {
+  font-size: 1.85714em;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: 'Avenir Next', sans-serif;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.thirdBox > p {
+  font-size: 14px;
+  font-family: 'Avenir Next', sans-serif;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  font-style: normal;
+  font-weight: 300;
+  color: #000;
+  line-height: 1.5;
+}
+.thirdBox > h4 {
+  letter-spacing: 0.1rem;
+}

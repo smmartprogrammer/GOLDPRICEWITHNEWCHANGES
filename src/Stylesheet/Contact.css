@@ -1,0 +1,34 @@
+.contact {
+  margin-top: 60px;
+  margin-left: 23%;
+  margin-right: 23%;
+}
+.contactHeading {
+  text-align: center;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  font-size: 2.5em;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 100;
+}
+.SocialServices {
+  display: flex;
+  margin-top: 40px;
+  /* border: 1px solid black; */
+}
+.socialservicesIcons {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.socialservicesIcons > * {
+  flex: 1 1 5em;
+}
+
+li > img {
+  width: 60%;
+  height: 80%;
+}
