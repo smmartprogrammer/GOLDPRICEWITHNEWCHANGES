@@ -105,15 +105,15 @@ const PriceComponent = () => {
             <input
               className="number"
               type="number"
-              placeholder="Please enter the Price"
-              // value={value}
+              placeholder="Price"
+              value={price}
               onChange={priceHandling}
             />
 
             <input
               className="number"
               type="number"
-              placeholder="Please enter the weights in grams"
+              placeholder="Grams"
               onChange={gramWeightHandling}
               // onChange={(e) => (e.target.value)}
             />
@@ -138,20 +138,40 @@ const PriceComponent = () => {
           </div>
         </div>
         <div className="resultDisplayer">
-          <div className="heading goldRatesecondHeading ">
-            {/* Revised Jewelry Gold: €{Math.round(inputedGoldPrice)} */}
-            {/* <h3 className="secondPriceHeading">
+          <div className="line"></div>
+          {/* <div className="heading goldRatesecondHeading "> */}
+
+          {/* Revised Jewelry Gold: €{Math.round(inputedGoldPrice)} */}
+          {/* <h3 className="secondPriceHeading">
               Current Jewelry Gold */}
-            {/* {Math.round(webapi.rates.XAU)} gram Current */}
-            {/* Jewelry Gold {15} gram */}
-            {/* </h3> */}
-          </div>
+          {/* {Math.round(webapi.rates.XAU)} gram Current */}
+          {/* Jewelry Gold {15} gram */}
+          {/* </h3> */}
+          {/* </div> */}
           {/* <br /> */}
+
           <div className="resultOutput">
             <div className="exactResult">
-              {Math.round((inputedGoldPrice / 1000) * active)}€
+              <div className="goldsections">
+                <div className="finegoldsection">
+                  <div className="firstfine">Fine gold</div>
+                  <div className="secondfine">46.26</div>
+                </div>
+                <div className="jewellerygoldsection">
+                  <div className="firstjewellery">Jewelry gold</div>
+                  <div className="secondjewellery">
+                    {!inputedGoldPrice
+                      ? '43.06'
+                      : Math.round((inputedGoldPrice / 1000) * active)}
+                    €
+                  </div>
+                </div>
+              </div>
+
+              {/* {Math.round((inputedGoldPrice / 1000) * active)}€ */}
             </div>
           </div>
+
           {/* <h3 className="secondPriceHeading">Price of {active} gram</h3> */}
         </div>
       </div>
