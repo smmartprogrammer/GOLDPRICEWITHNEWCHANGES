@@ -71,7 +71,7 @@ const PriceComponent = () => {
       setwebapi(data);
       // localStorage.setItem('Rates', webapi.rates.XAU);
       console.log('Data', webapi.XAU);
-      setPrice(data.rates.XAU);
+      // setPrice(data.rates.XAU);
       console.log(data);
       console.log('from state', webapi);
     }
@@ -139,19 +139,20 @@ const PriceComponent = () => {
         </div>
         <div className="resultDisplayer">
           <div className="heading goldRatesecondHeading ">
-            Revised Jewelry Gold: €{Math.round(inputedGoldPrice)}
-            <br />
-            <h3 className="secondPriceHeading">
-              Current Jewelry Gold {Math.round(webapi.rates.XAU)} gram
-              {/* Current Jewelry Gold {15} gram */}
-            </h3>
+            {/* Revised Jewelry Gold: €{Math.round(inputedGoldPrice)} */}
+            {/* <h3 className="secondPriceHeading">
+              Current Jewelry Gold */}
+            {/* {Math.round(webapi.rates.XAU)} gram Current */}
+            {/* Jewelry Gold {15} gram */}
+            {/* </h3> */}
           </div>
+          {/* <br /> */}
           <div className="resultOutput">
             <div className="exactResult">
               {Math.round((inputedGoldPrice / 1000) * active)}€
             </div>
           </div>
-          <h3 className="secondPriceHeading">Price of {active} gram</h3>
+          {/* <h3 className="secondPriceHeading">Price of {active} gram</h3> */}
         </div>
       </div>
     </div>
