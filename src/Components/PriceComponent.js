@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../Stylesheet/PriceComponent.css';
 
 const PriceComponent = () => {
-  // const [price, setPrice] = useState(15);
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState(15);
+  // const [price, setPrice] = useState();
   const [gram, setGram] = useState(0);
   const [nineHunderdCoins, setNineHundredCoins] = useState(900);
   const [sevenFiftyGold, setSevenFiftyGold] = useState(750);
@@ -16,6 +16,8 @@ const PriceComponent = () => {
   const [newGram, setNewGram] = useState();
   const [newValue, setNewValue] = useState(0);
   const [webapi, setwebapi] = useState([]);
+  const [ValueOfNinetyNine, setValueOfNinetyNine] = useState();
+  const [apiValue, setApiValue] = useState(43.06);
 
   const priceHandling = (e) => {
     setPrice(e.target.value);
@@ -23,13 +25,19 @@ const PriceComponent = () => {
 
   const gramWeightHandling = (e) => {
     setGram(e.target.value);
-    console.log(gram);
+    console.log('this is gram', gram);
   };
 
   const handleSubmit = () => {
     setInputedGoldPrice(price);
     setCurrentOption(gram);
     setActive(currentOption);
+    console.log(ValueOfNinetyNine);
+  };
+
+  const refresher = () => {
+    setValueOfNinetyNine();
+    setActive();
   };
 
   const firstbtn = () => {
@@ -47,9 +55,13 @@ const PriceComponent = () => {
     setCurrentOption(threeHundredThirtyThreeGold);
   };
 
-  const localdatastore = () => {
-    localStorage.setItem('webapidata', webapi);
+  const ninetyNinePriceHandler = () => {
+    setValueOfNinetyNine(46.26);
   };
+
+  // const localdatastore = () => {
+  //   localStorage.setItem('webapidata', webapi);
+  // };
 
   // async function fetchdata() {
   //   const response = await fetch(
@@ -61,23 +73,23 @@ const PriceComponent = () => {
   //   // localStorage.setItem('Rates', webapi.rates.XAU);
   // }
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        'https://metals-api.com/api/latest?access_key=rcgf88qitlo794lf9dkqo09n6lslkyfx7t23pcciee3bp41otjfnmhcty86l&base=EUR&symbols=XAU',
-      );
-      console.log('response: ', response);
-      let data = await response.json();
-      setwebapi(data);
-      // localStorage.setItem('Rates', webapi.rates.XAU);
-      console.log('Data', webapi.XAU);
-      // setPrice(data.rates.XAU);
-      console.log(data);
-      console.log('from state', webapi);
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await fetch(
+  //       'https://metals-api.com/api/latest?access_key=rcgf88qitlo794lf9dkqo09n6lslkyfx7t23pcciee3bp41otjfnmhcty86l&base=EUR&symbols=XAU',
+  //     );
+  //     console.log('response: ', response);
+  //     let data = await response.json();
+  //     setwebapi(data);
+  //     // localStorage.setItem('Rates', webapi.rates.XAU);
+  //     console.log('Data', webapi.XAU);
+  //     setPrice(data.rates.XAU);
+  //     console.log(data);
+  //     console.log('from state', webapi);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   function getTime() {
     let today = new Date();
@@ -102,37 +114,59 @@ const PriceComponent = () => {
         <div className="queries">
           <div className="heading">Price Options </div>
           <div className="fieldArea">
-            <input
+            {/* <input
               className="number"
               type="number"
-              placeholder="Price"
+              placeholder="999,9/-"
               value={price}
               onChange={priceHandling}
-            />
+            /> */}
+            <button className="btn" onClick={ninetyNinePriceHandler}>
+              999,9
+            </button>
 
             <input
               className="number"
               type="number"
               placeholder="Grams"
               onChange={gramWeightHandling}
-              // onChange={(e) => (e.target.value)}
             />
             <br />
-            <button className="btn" onClick={firstbtn}>
+            <button
+              className="btn"
+              onClick={firstbtn}
+              disabled={gram ? true : false}
+            >
               900 Coin
             </button>
-            <button className="btn" onClick={secondBtn}>
+            <button
+              className="btn"
+              onClick={secondBtn}
+              disabled={gram ? true : false}
+            >
               750 Gold
             </button>
-            <button className="btn" onClick={thirdBtn}>
+            <button
+              className="btn"
+              onClick={thirdBtn}
+              disabled={gram ? true : false}
+            >
               585 Gold
             </button>
-            <button className="btn" onClick={fourthBtn}>
+            <button
+              className="btn"
+              onClick={fourthBtn}
+              disabled={gram ? true : false}
+            >
               333 Gold
             </button>
             <br />
+
             <button type="submit" onClick={handleSubmit} className="btn">
               Submit
+            </button>
+            <button type="reset" onClick={refresher} className="btn">
+              Refresh
             </button>
             <br />
           </div>
@@ -154,16 +188,26 @@ const PriceComponent = () => {
             <div className="exactResult">
               <div className="goldsections">
                 <div className="finegoldsection">
-                  <div className="firstfine">Fine gold</div>
-                  <div className="secondfine">46.26</div>
+                  <div className="firstfine">
+                    {!active ? 'Fine Gold' : 'Fine Gold'}
+                    {/* Fine gold */}
+                  </div>
+                  <div className="secondfine">
+                    {!active ? '46,07' : active}€/g
+                  </div>
                 </div>
                 <div className="jewellerygoldsection">
-                  <div className="firstjewellery">Jewelry gold</div>
+                  <div className="firstjewellery">
+                    {!ValueOfNinetyNine ? 'Jewelry gold' : 'Fine gold Price'}
+                  </div>
                   <div className="secondjewellery">
-                    {!inputedGoldPrice
-                      ? '43.06'
+                    {/* {!inputedGoldPrice? '43.06'
                       : Math.round((inputedGoldPrice / 1000) * active)}
-                    €
+                    € */}
+
+                    {!ValueOfNinetyNine
+                      ? '43.06'
+                      : Math.round((ValueOfNinetyNine / 1000) * active)}
                   </div>
                 </div>
               </div>

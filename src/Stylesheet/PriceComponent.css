@@ -72,7 +72,6 @@
   box-shadow: 1px 6px 18px 5px rgba(95, 93, 67, 0.61);
   font-weight: bold;
 }
-
 .resultDisplayer {
   padding: 20px;
   display: flex;
@@ -112,9 +111,10 @@
   justify-content: center;
 }
 .exactResult {
-  background-image: url('https://www.coininvest.com/blog/en/wp-content/uploads/sites/3/2017/01/1-goldmark.png');
+  /* background-image: url('https://www.coininvest.com/blog/en/wp-content/uploads/sites/3/2017/01/1-goldmark.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #fff;
   width: 50%;
   border-radius: 50%;
   display: flex;
@@ -188,7 +188,7 @@
 
 @media screen and (max-width: 824px) {
   .priceMain_first {
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
   }
 }
 
@@ -200,7 +200,7 @@
 
 @media screen and (max-width: 480px) {
   .priceMain_first {
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
   }
 }
 
