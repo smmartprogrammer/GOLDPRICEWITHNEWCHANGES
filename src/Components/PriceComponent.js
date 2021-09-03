@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../Stylesheet/PriceComponent.css';
 
 const PriceComponent = () => {
-  const [price, setPrice] = useState(15);
-  // const [price, setPrice] = useState();
-  const [gram, setGram] = useState(0);
+  // const [price, setPrice] = useState(15);
+  const [price, setPrice] = useState();
+  const [gram, setGram] = useState(150);
   const [nineHunderdCoins, setNineHundredCoins] = useState(900);
   const [sevenFiftyGold, setSevenFiftyGold] = useState(750);
   const [fiveEightyFiveGold, setFiveEightyFiveGold] = useState(585);
@@ -13,11 +13,12 @@ const PriceComponent = () => {
   const [currentOption, setCurrentOption] = useState();
   const [inputedGoldPrice, setInputedGoldPrice] = useState(0);
   const [active, setActive] = useState(0);
-  const [newGram, setNewGram] = useState();
   const [newValue, setNewValue] = useState(0);
   const [webapi, setwebapi] = useState([]);
-  const [ValueOfNinetyNine, setValueOfNinetyNine] = useState();
+  const [ValueOfNinetyNine, setValueOfNinetyNine] = useState(0);
   const [apiValue, setApiValue] = useState(43.06);
+  const [fineGoldPrice, setFineGoldPrice] = useState(46.07);
+  const [jewelleryGoldPrice, setJewelleryGoldPrice] = useState(43.06);
 
   const priceHandling = (e) => {
     setPrice(e.target.value);
@@ -25,7 +26,8 @@ const PriceComponent = () => {
 
   const gramWeightHandling = (e) => {
     setGram(e.target.value);
-    console.log('this is gram', gram);
+    // console.log(e.target.value);
+    console.log(gram);
   };
 
   const handleSubmit = () => {
@@ -33,6 +35,7 @@ const PriceComponent = () => {
     setCurrentOption(gram);
     setActive(currentOption);
     console.log(ValueOfNinetyNine);
+    setGram('');
   };
 
   const refresher = () => {
@@ -106,7 +109,7 @@ const PriceComponent = () => {
     getTime();
   }
 
-  Nineam();
+  // Nineam();
 
   return (
     <div className="priceMain">
@@ -130,6 +133,7 @@ const PriceComponent = () => {
               type="number"
               placeholder="Grams"
               onChange={gramWeightHandling}
+              value={gram}
             />
             <br />
             <button
@@ -193,7 +197,8 @@ const PriceComponent = () => {
                     {/* Fine gold */}
                   </div>
                   <div className="secondfine">
-                    {!active ? '46,07' : active}€/g
+                    {!active ? fineGoldPrice : active}
+                    <span className="europergram">€/g</span>
                   </div>
                 </div>
                 <div className="jewellerygoldsection">
@@ -204,10 +209,10 @@ const PriceComponent = () => {
                     {/* {!inputedGoldPrice? '43.06'
                       : Math.round((inputedGoldPrice / 1000) * active)}
                     € */}
-
                     {!ValueOfNinetyNine
-                      ? '43.06'
+                      ? jewelleryGoldPrice
                       : Math.round((ValueOfNinetyNine / 1000) * active)}
+                    <span className="europergram">€/g</span>
                   </div>
                 </div>
               </div>

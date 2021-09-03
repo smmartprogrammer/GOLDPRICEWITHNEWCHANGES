@@ -149,7 +149,11 @@
 }
 .secondfine {
   font-size: 40px;
+  /* border: 1px solid black; */
   font-weight: bold;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 .jewellerygoldsection {
   display: flex;
@@ -165,6 +169,9 @@
 .secondjewellery {
   font-weight: bold;
   font-size: 27px;
+}
+.europergram {
+  font-size: 15px;
 }
 /* ====================================================
           @media query for responsiveness
