@@ -5,12 +5,11 @@
 }
 
 .priceMain_first {
-  /* width: 100%; */
   background-color: lightgray;
-  /* border: 1px solid black; */
+  border: 1px solid rgb(187, 181, 181);
   display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: row; */
+  flex-wrap: wrap-reverse;
+  border-radius: 5px;
 }
 .priceMain_first > * {
   flex: 1 1 10em;
@@ -31,7 +30,8 @@
   font-family: sans-serif;
   font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
     'helvetica', ' arial', 'arial';
-  font-size: 35px;
+  /* font-size: 35px; */
+  font-size: 2rem;
   width: 100%;
   color: black;
   font-weight: bold;
@@ -41,7 +41,7 @@
   /* background-color: green; */
 }
 .fieldArea {
-  /* border: 2px solid green; */
+  /* border: 1px solid green; */
 }
 
 .number {
@@ -75,7 +75,6 @@
 .resultDisplayer {
   padding: 20px;
   display: flex;
-  flex-direction: column;
   /* border: 1px solid black; */
   width: 50%;
   justify-content: center;
@@ -85,7 +84,7 @@
 }
 
 .line {
-  width: 2px;
+  width: 3px;
   height: 80%;
   background-color: black;
   margin-right: 3px;
@@ -111,9 +110,6 @@
   justify-content: center;
 }
 .exactResult {
-  /* background-image: url('https://www.coininvest.com/blog/en/wp-content/uploads/sites/3/2017/01/1-goldmark.png');
-  background-repeat: no-repeat;
-  background-size: cover; */
   background-color: #fff;
   width: 50%;
   border-radius: 50%;
@@ -137,18 +133,24 @@
 }
 .finegoldsection {
   display: flex;
-  /* border-radius: 1px solid black; */
+  border-radius: 1px solid black;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* background-color: red; */
 }
-
+.finegoldsection::after {
+  content: '';
+  width: 120%;
+  height: 2px;
+  background-color: black;
+}
 .firstfine {
-  font-size: 25px;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 .secondfine {
-  font-size: 40px;
+  font-size: 30px;
   /* border: 1px solid black; */
   font-weight: bold;
   /* display: flex;
@@ -163,56 +165,325 @@
   justify-content: center;
 }
 .firstjewellery {
-  font-size: 21px;
+  font-size: 1rem;
   font-weight: bold;
 }
 .secondjewellery {
   font-weight: bold;
-  font-size: 27px;
+  font-size: 23px;
 }
+
 .europergram {
   font-size: 15px;
+  padding-left: 5px;
 }
+
 /* ====================================================
           @media query for responsiveness
 ==================================================== */
-/* 
-@media screen and (max-width: 1250px) {
+
+@media screen and (max-width: 1445px) {
+  .priceMain {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .exactResult {
+    width: 50%;
+  }
+  .europergram {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  .secondfine {
+    padding-bottom: 7px;
+  }
+  .firstjewellery {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .priceMain {
+    margin-left: 19%;
+    margin-right: 19%;
+  }
+  .europergram {
+    padding-left: 5px;
+  }
+  .secondfine {
+    padding-bottom: 7px;
+  }
+  .firstjewellery {
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1311px) {
+  .priceMain {
+    margin-left: 18%;
+    margin-right: 18%;
+  }
+}
+
+@media screen and (max-width: 1316px) {
+  .priceMain {
+    margin-left: 17%;
+    margin-right: 17%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .exactResult {
+    width: 55%;
+  }
+
+  .priceMain {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .priceMain {
+    margin-left: 14%;
+    margin-right: 14%;
+  }
+}
+@media screen and (max-width: 1101px) {
+  .priceMain {
+    margin-left: 13%;
+    margin-left: 13%;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .priceMain {
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+}
+@media screen and (max-width: 1085px) {
+  .priceMain {
+    margin-left: 11%;
+    margin-right: 11%;
+  }
+}
+
+@media screen and (max-width: 1051px) {
+  .priceMain {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+/* @media screen and (max-width: 1047px) {
+  .priceMain {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+} */
+@media screen and (max-width: 1025px) {
+  .priceMain {
+    margin-left: 9%;
+    margin-right: 9%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .firstfine {
+    font-size: 1.3rem;
+  }
+  .secondfine {
+    font-size: 20px;
+  }
+  .secondjewellery {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 996px) {
+  .priceMain {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+@media screen and (max-width: 975px) {
+  .priceMain {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+}
+
+/* @media screen and (max-width: 972px) {
+  .priceMain {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+} */
+@media screen and (max-width: 969px) {
+  .priceMain {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .priceMain {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 912px) {
+  .priceMain {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .queries {
+    padding: 17px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .fieldArea {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* .exactResult {
+    width: 80%;
+  } */
+}
+@media screen and (max-width: 850px) {
+  /* .exactResult {
+    width: 100%;
+  } */
+}
+@media screen and (max-width: 845px) {
+  /* .exactResult {
+    width: 50%;
+  } */
+  .line {
+    display: none;
+  }
+  /* .firstfine {
+    font-size: 1rem;
+  } */
+}
+
+@media screen and (max-width: 800px) {
+  .line {
+    display: none;
+  }
+  /* .exactResult {
+    width: 52%;
+  } */
+  .secondfine {
+    font-size: 22px;
+    /* border: 1px solid black; */
+    font-weight: bold;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* .exactResult {
+    width: 60%;
+  } */
+}
+
+@media screen and (max-width: 715px) {
+  .exactResult {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 606px) {
+  .number {
+    width: 70px;
+  }
+  .exactResult {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .exactResult {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  /* .exactResult {
+    width: 65%;
+  } */
+  .heading {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  /* .exactResult {
+    width: 65%;
+  } */
+  /* .heading {
+    font-size: 1.6rem;
+  } */
+  .fieldArea {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 460px) {
   .exactResult {
     width: 55%;
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 378px) {
   .exactResult {
-    width: 60%;
+    width: 75%;
   }
 }
-*/
-/* @media screen and (max-width: 972px) {
+
+@media screen and (max-width: 350px) {
+  .exactResult {
+    width: 75%;
+  }
+}
+
+/* @media screen and (max-width: 480px) {
   
-} */
-
-@media screen and (max-width: 824px) {
-  .priceMain_first {
-    /* flex-direction: column-reverse; */
+  .priceMain {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
+  .number {
+    width: 70px;
+  }
+  .fieldArea {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .secondfine {
+    padding-bottom: 7px;
+  }
+  .firstjewellery {
+    padding-top: 5px;
+  }
+  .firstjewellery {
+    font-weight: 800;
+  }
+  .europergram {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  .firstfine {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+} */
+@media screen {
 }
 
-/* @media screen and (max-width: 600px) {
-  .exactResult {
-    width: 60%;
-  }
-} */
-
-@media screen and (max-width: 480px) {
-  .priceMain_first {
-    /* flex-direction: column-reverse; */
-  }
-}
-
-/* @media screen and (max-width: 350px) {
-  .exactResult {
-    width: 100%;
-  }
-} */
+/* 
+320
+480
+600
+768
+900
+1024
+1200 */

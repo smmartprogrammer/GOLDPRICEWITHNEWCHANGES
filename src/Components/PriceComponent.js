@@ -4,7 +4,7 @@ import '../Stylesheet/PriceComponent.css';
 const PriceComponent = () => {
   // const [price, setPrice] = useState(15);
   const [price, setPrice] = useState();
-  const [gram, setGram] = useState(150);
+  const [gram, setGram] = useState();
   const [nineHunderdCoins, setNineHundredCoins] = useState(900);
   const [sevenFiftyGold, setSevenFiftyGold] = useState(750);
   const [fiveEightyFiveGold, setFiveEightyFiveGold] = useState(585);
@@ -16,9 +16,11 @@ const PriceComponent = () => {
   const [newValue, setNewValue] = useState(0);
   const [webapi, setwebapi] = useState([]);
   const [ValueOfNinetyNine, setValueOfNinetyNine] = useState(0);
-  const [apiValue, setApiValue] = useState(43.06);
-  const [fineGoldPrice, setFineGoldPrice] = useState(46.07);
-  const [jewelleryGoldPrice, setJewelleryGoldPrice] = useState(43.06);
+  // const [apiValue, setApiValue] = useState(43.06);
+  const [fineGoldPrice, setFineGoldPrice] = useState(46.45);
+  const [jewelleryGoldPrice, setJewelleryGoldPrice] = useState(43.25);
+  const [disable, setDisable] = useState(false);
+  const [activatedPrice, setActivatedPrice] = useState(false);
 
   const priceHandling = (e) => {
     setPrice(e.target.value);
@@ -26,7 +28,6 @@ const PriceComponent = () => {
 
   const gramWeightHandling = (e) => {
     setGram(e.target.value);
-    // console.log(e.target.value);
     console.log(gram);
   };
 
@@ -41,25 +42,83 @@ const PriceComponent = () => {
   const refresher = () => {
     setValueOfNinetyNine();
     setActive();
+    setDisable(false);
   };
 
   const firstbtn = () => {
     setCurrentOption(nineHunderdCoins);
+    setDisable(true);
   };
   const secondBtn = () => {
     setCurrentOption(sevenFiftyGold);
+    setDisable(true);
   };
 
   const thirdBtn = () => {
     setCurrentOption(fiveEightyFiveGold);
+    setDisable(true);
   };
 
   const fourthBtn = () => {
     setCurrentOption(threeHundredThirtyThreeGold);
+    setDisable(true);
   };
 
   const ninetyNinePriceHandler = () => {
-    setValueOfNinetyNine(46.26);
+    var currentValue = Number(46.45);
+    setValueOfNinetyNine(currentValue);
+    // setValueOfNinetyNine(46.45);
+  };
+
+  const fineGoldRatesHandler = () => {
+    console.log(ValueOfNinetyNine);
+  };
+  fineGoldRatesHandler();
+
+  const FirstHeadingHandler = () => {
+    if (ValueOfNinetyNine) {
+      return 'Fine Gold';
+    } else if (!active) {
+      return 'Fine Gold';
+    } else if (active) {
+      return 'Jewelry Gold';
+    } else {
+      return 'Fine Gold';
+    }
+  };
+
+  const FirstGoldRateHandler = () => {
+    return active;
+  };
+
+  const SecondgoldPriceHandler = () => {
+    if (ValueOfNinetyNine) {
+      var fineGoldHandling = Math.round((active / 1000) * fineGoldPrice);
+      if (fineGoldHandling) {
+        return fineGoldHandling;
+      } else {
+        return '0';
+      }
+    } else if (active) {
+      var jewelryGoldHandling = Math.round(
+        (active / 1000) * jewelleryGoldPrice,
+      );
+      return jewelryGoldHandling;
+    } else {
+      return jewelleryGoldPrice;
+    }
+  };
+
+  const FirstJeweleryHeadingHandler = () => {
+    if (ValueOfNinetyNine && active) {
+      return 'Fine Gold Price';
+    } else if (ValueOfNinetyNine) {
+      return 'Jewelry Gold';
+    } else if (active) {
+      return 'Jewelry Gold Price';
+    } else {
+      return 'Jewelry Gold';
+    }
   };
 
   // const localdatastore = () => {
@@ -124,7 +183,11 @@ const PriceComponent = () => {
               value={price}
               onChange={priceHandling}
             /> */}
-            <button className="btn" onClick={ninetyNinePriceHandler}>
+            <button
+              className="btn"
+              disabled={disable ? disable : false}
+              onClick={ninetyNinePriceHandler}
+            >
               999,9
             </button>
 
@@ -134,6 +197,7 @@ const PriceComponent = () => {
               placeholder="Grams"
               onChange={gramWeightHandling}
               value={gram}
+              disabled={disable ? disable : false}
             />
             <br />
             <button
@@ -193,25 +257,33 @@ const PriceComponent = () => {
               <div className="goldsections">
                 <div className="finegoldsection">
                   <div className="firstfine">
-                    {!active ? 'Fine Gold' : 'Fine Gold'}
-                    {/* Fine gold */}
+                    {/* {!active ? 'Fine Gold' : disable==true : 'Jewelry Gold' : 'Jewelry Gold'} */}
+                    {FirstHeadingHandler()}
                   </div>
                   <div className="secondfine">
-                    {!active ? fineGoldPrice : active}
+                    {active ? FirstGoldRateHandler() : fineGoldPrice}
+
+                    {/* {!active ? fineGoldPrice : active} */}
                     <span className="europergram">€/g</span>
                   </div>
                 </div>
                 <div className="jewellerygoldsection">
                   <div className="firstjewellery">
-                    {!ValueOfNinetyNine ? 'Jewelry gold' : 'Fine gold Price'}
+                    {FirstJeweleryHeadingHandler()}
+                    {/* {!ValueOfNinetyNine ? 'Jewelry gold' : 'Fine gold Price'} */}
                   </div>
                   <div className="secondjewellery">
+                    {SecondgoldPriceHandler()}
                     {/* {!inputedGoldPrice? '43.06'
                       : Math.round((inputedGoldPrice / 1000) * active)}
                     € */}
-                    {!ValueOfNinetyNine
+
+                    {/* {!ValueOfNinetyNine
                       ? jewelleryGoldPrice
-                      : Math.round((ValueOfNinetyNine / 1000) * active)}
+                      : Math.round((ValueOfNinetyNine / 1000) * active)} */}
+
+                    {/* {ValueOfNinetyNine ? 'yes ' : 'no'} */}
+
                     <span className="europergram">€/g</span>
                   </div>
                 </div>

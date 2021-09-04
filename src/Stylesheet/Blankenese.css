@@ -28,3 +28,11 @@ a {
   width: 100%;
   height: auto;
 }
+
+@media screen and (max-width: 480px) {
+  .blankense {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
