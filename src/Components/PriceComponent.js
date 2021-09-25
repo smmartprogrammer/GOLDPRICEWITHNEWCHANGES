@@ -152,6 +152,7 @@ const PriceComponent = () => {
 
   //   fetchData();
   // }, []);
+  // it is just for checking purpose, dont take it seriously.
 
   function getTime() {
     let today = new Date();
