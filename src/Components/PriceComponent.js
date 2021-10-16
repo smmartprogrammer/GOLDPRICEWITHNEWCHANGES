@@ -17,8 +17,8 @@ const PriceComponent = () => {
   const [webapi, setwebapi] = useState([]);
   const [ValueOfNinetyNine, setValueOfNinetyNine] = useState(0);
   // const [apiValue, setApiValue] = useState(43.06);
-  const [fineGoldPrice, setFineGoldPrice] = useState(46.45);
-  const [jewelleryGoldPrice, setJewelleryGoldPrice] = useState(43.25);
+  const [fineGoldPrice, setFineGoldPrice] = useState(45.99);
+  const [jewelleryGoldPrice, setJewelleryGoldPrice] = useState(42.79);
   const [disable, setDisable] = useState(false);
   const [activatedPrice, setActivatedPrice] = useState(false);
 
@@ -28,7 +28,6 @@ const PriceComponent = () => {
 
   const gramWeightHandling = (e) => {
     setGram(e.target.value);
-    console.log(gram);
   };
 
   const handleSubmit = () => {
@@ -81,29 +80,33 @@ const PriceComponent = () => {
     } else if (!active) {
       return 'Fine Gold';
     } else if (active) {
-      return 'Jewelry Gold';
+      return 'We pay';
     } else {
       return 'Fine Gold';
     }
   };
 
   const FirstGoldRateHandler = () => {
-    return active;
+    if (currentOption == 750) {
+      return 3;
+    } else {
+      return active;
+    }
   };
 
   const SecondgoldPriceHandler = () => {
     if (ValueOfNinetyNine) {
-      var fineGoldHandling = Math.round((active / 1000) * fineGoldPrice);
+      var fineGoldHandling = (active / 1000) * fineGoldPrice;
+
       if (fineGoldHandling) {
-        return fineGoldHandling;
+        return fineGoldHandling.toFixed(2);
       } else {
         return '0';
       }
     } else if (active) {
-      var jewelryGoldHandling = Math.round(
-        (active / 1000) * jewelleryGoldPrice,
-      );
-      return jewelryGoldHandling;
+      var jewelryGoldHandling = (active / 1000) * jewelleryGoldPrice;
+      console.log(jewelryGoldHandling);
+      return jewelryGoldHandling.toFixed(2);
     } else {
       return jewelleryGoldPrice;
     }
@@ -111,15 +114,35 @@ const PriceComponent = () => {
 
   const FirstJeweleryHeadingHandler = () => {
     if (ValueOfNinetyNine && active) {
-      return 'Fine Gold Price';
+      return 'Fine Gold Price'; // this is second line heading
     } else if (ValueOfNinetyNine) {
       return 'Jewelry Gold';
     } else if (active) {
-      return 'Jewelry Gold Price';
+      return 'Jewelry Gold Price'; // this condition will run when we just only click on any gold button and then when will submit the current text will appear
     } else {
       return 'Jewelry Gold';
     }
   };
+
+  // const uiHandler = () => {
+  //   let GoldSectionPlace = document.getElementById('GoldSectionPlace');
+  //   if (ValueOfNinetyNine && active) {
+  //     GoldSectionPlace.innerHTML = `
+  //     ${<div className="CenteredResult">
+  //         <div className="CenteredResultFirstHeading">
+  //           Fine Gold Price
+  //         </div>
+  //         <div className="CenteredResultValue">
+  //           25
+  //           <span className="Centeraleuropergram">€/g</span>
+  //         </div>
+  //       </div>}
+  //      `
+
+  //   }
+  // }
+
+  // uiHandler()
 
   // const localdatastore = () => {
   //   localStorage.setItem('webapidata', webapi);
@@ -177,13 +200,6 @@ const PriceComponent = () => {
         <div className="queries">
           <div className="heading">Price Options </div>
           <div className="fieldArea">
-            {/* <input
-              className="number"
-              type="number"
-              placeholder="999,9/-"
-              value={price}
-              onChange={priceHandling}
-            /> */}
             <button
               className="btn"
               disabled={disable ? disable : false}
@@ -230,7 +246,6 @@ const PriceComponent = () => {
               333 Gold
             </button>
             <br />
-
             <button type="submit" onClick={handleSubmit} className="btn">
               Submit
             </button>
@@ -242,59 +257,70 @@ const PriceComponent = () => {
         </div>
         <div className="resultDisplayer">
           <div className="line"></div>
-          {/* <div className="heading goldRatesecondHeading "> */}
-
-          {/* Revised Jewelry Gold: €{Math.round(inputedGoldPrice)} */}
-          {/* <h3 className="secondPriceHeading">
-              Current Jewelry Gold */}
-          {/* {Math.round(webapi.rates.XAU)} gram Current */}
-          {/* Jewelry Gold {15} gram */}
-          {/* </h3> */}
-          {/* </div> */}
-          {/* <br /> */}
-
           <div className="resultOutput">
             <div className="exactResult">
-              <div className="goldsections">
-                <div className="finegoldsection">
-                  <div className="firstfine">
-                    {/* {!active ? 'Fine Gold' : disable==true : 'Jewelry Gold' : 'Jewelry Gold'} */}
-                    {FirstHeadingHandler()}
-                  </div>
+              <div className="goldsections" id="GoldSectionPlace">
+                <div
+                  className={
+                    ValueOfNinetyNine ? 'finegoldsection2' : 'finegoldsection'
+                  }
+                >
+                  <div className="firstfine">{FirstHeadingHandler()}</div>
                   <div className="secondfine">
                     {active ? FirstGoldRateHandler() : fineGoldPrice}
-
-                    {/* {!active ? fineGoldPrice : active} */}
                     <span className="europergram">€/g</span>
                   </div>
                 </div>
-                <div className="jewellerygoldsection">
+                <div
+                  className={
+                    ValueOfNinetyNine
+                      ? 'jewellerygoldsection2'
+                      : 'jewellerygoldsection'
+                  }
+                >
                   <div className="firstjewellery">
                     {FirstJeweleryHeadingHandler()}
-                    {/* {!ValueOfNinetyNine ? 'Jewelry gold' : 'Fine gold Price'} */}
                   </div>
                   <div className="secondjewellery">
                     {SecondgoldPriceHandler()}
-                    {/* {!inputedGoldPrice? '43.06'
-                      : Math.round((inputedGoldPrice / 1000) * active)}
-                    € */}
-
-                    {/* {!ValueOfNinetyNine
-                      ? jewelleryGoldPrice
-                      : Math.round((ValueOfNinetyNine / 1000) * active)} */}
-
-                    {/* {ValueOfNinetyNine ? 'yes ' : 'no'} */}
-
                     <span className="europergram">€/g</span>
                   </div>
                 </div>
-              </div>
 
-              {/* {Math.round((inputedGoldPrice / 1000) * active)}€ */}
+                {/*
+                <div
+                  className={
+                    ValueOfNinetyNine ? 'CenteredResult' : 'CenteredResult2'
+                  }
+                >
+                  <div className="CenteredResultFirstHeading">
+                    Fine Gold Price
+                  </div>
+                  <div className="CenteredResultValue">
+                    {SecondgoldPriceHandler()}
+                    <span className="Centeraleuropergram">€/g</span>
+                  </div>
+                </div> */}
+
+                <div
+                  className={
+                    ValueOfNinetyNine ? 'CenteredResult' : 'CenteredResult2'
+                  }
+                >
+                  <div className="newThree">
+                    {active ? active : 0}
+                    <span className="Centeraleuropergram"> g</span>
+                  </div>
+                  <div className="newUIDesign">Fine gold </div>
+                  <div className="newUIDesign">999,9</div>
+                  <div className="CenteredResultFirstHeading">
+                    {SecondgoldPriceHandler()}
+                    <span className="Centeraleuropergram"> €/g</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* <h3 className="secondPriceHeading">Price of {active} gram</h3> */}
         </div>
       </div>
     </div>

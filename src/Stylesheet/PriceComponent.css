@@ -11,6 +11,7 @@
   flex-wrap: wrap-reverse;
   border-radius: 5px;
 }
+
 .priceMain_first > * {
   flex: 1 1 10em;
 }
@@ -40,6 +41,7 @@
   text-align: center;
   /* background-color: green; */
 }
+
 .fieldArea {
   /* border: 1px solid green; */
 }
@@ -52,6 +54,7 @@
   outline: none;
   padding-left: 5px;
 }
+
 ::placeholder {
   font-size: 13px;
   padding-left: 5px;
@@ -66,12 +69,14 @@
   border: 1px solid rgb(116, 112, 112);
   cursor: pointer;
 }
+
 .btn:hover {
   transition: 0.5s;
   -webkit-box-shadow: 1px 6px 18px 5px rgba(0, 0, 0, 0.61);
   box-shadow: 1px 6px 18px 5px rgba(95, 93, 67, 0.61);
   font-weight: bold;
 }
+
 .resultDisplayer {
   padding: 20px;
   display: flex;
@@ -89,17 +94,21 @@
   background-color: black;
   margin-right: 3px;
 }
+
 .secondPriceHeading {
   margin-top: 5px;
   font-size: 24px;
 }
+
 .goldRatesecondHeading {
   font-size: 30px;
 }
+
 .headingdisplayeroutput {
   /* width: 100%; */
   /* border: 1px solid rgb(18, 29, 7); */
 }
+
 .resultOutput {
   /* border: 1px solid red; */
   width: 100%;
@@ -109,20 +118,23 @@
   align-items: center;
   justify-content: center;
 }
+
 .exactResult {
   background-color: #fff;
-  width: 50%;
+  width: 55%;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px #000;
 }
+
 .exactResult::after {
   content: '';
   padding-bottom: 100%;
   display: inline-block;
 }
+
 .goldsections {
   /* border: 1px solid black; */
   width: 80%;
@@ -131,24 +143,37 @@
   align-items: center;
   flex-direction: column;
 }
+
 .finegoldsection {
   display: flex;
+  /* display: none; */
   border-radius: 1px solid black;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* background-color: red; */
 }
+
+.finegoldsection2 {
+  display: none;
+  border-radius: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .finegoldsection::after {
   content: '';
   width: 120%;
   height: 2px;
   background-color: black;
 }
+
 .firstfine {
   font-size: 1.4rem;
   font-weight: bold;
 }
+
 .secondfine {
   font-size: 30px;
   /* border: 1px solid black; */
@@ -157,17 +182,28 @@
   justify-content: center;
   align-items: center; */
 }
+
 .jewellerygoldsection {
   display: flex;
+  /* display: none; */
   /* border-radius: 1px solid black; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+.jewellerygoldsection2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .firstjewellery {
   font-size: 1rem;
   font-weight: bold;
 }
+
 .secondjewellery {
   font-weight: bold;
   font-size: 23px;
@@ -176,6 +212,62 @@
 .europergram {
   font-size: 15px;
   padding-left: 5px;
+}
+
+.CenteredResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CenteredResult2 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CenteredResultFirstHeading {
+  font-size: 23.5px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  padding-bottom: 10px;
+}
+.newThree {
+  font-size: 25.5px;
+  text-align: center;
+  font-weight: 750;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  padding-bottom: 10px;
+}
+.newUIDesign {
+  border-bottom: 2.5px solid black;
+  font-size: 23.5px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.CenteredResultValue {
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'avenir next', 'sans-serif', 'helveticaneue', 'helvetica neue',
+    'helvetica', ' arial', 'arial';
+}
+
+.Centeraleuropergram {
+  font-size: 17px;
+}
+
+.displayerChecker {
+  display: none;
 }
 
 /* ====================================================
@@ -236,7 +328,6 @@
   .exactResult {
     width: 55%;
   }
-
   .priceMain {
     margin-left: 15%;
     margin-right: 15%;
@@ -249,6 +340,7 @@
     margin-right: 14%;
   }
 }
+
 @media screen and (max-width: 1101px) {
   .priceMain {
     margin-left: 13%;
@@ -262,6 +354,7 @@
     margin-right: 12%;
   }
 }
+
 @media screen and (max-width: 1085px) {
   .priceMain {
     margin-left: 11%;
@@ -275,18 +368,21 @@
     margin-right: 10%;
   }
 }
+
 /* @media screen and (max-width: 1047px) {
   .priceMain {
     margin-left: 10%;
     margin-right: 10%;
   }
 } */
+
 @media screen and (max-width: 1025px) {
   .priceMain {
     margin-left: 9%;
     margin-right: 9%;
   }
 }
+
 @media screen and (max-width: 1000px) {
   .firstfine {
     font-size: 1.3rem;
@@ -298,12 +394,14 @@
     font-size: 18px;
   }
 }
+
 @media screen and (max-width: 996px) {
   .priceMain {
     margin-left: 8%;
     margin-right: 8%;
   }
 }
+
 @media screen and (max-width: 975px) {
   .priceMain {
     margin-left: 7%;
@@ -317,6 +415,7 @@
     margin-right: 7%;
   }
 } */
+
 @media screen and (max-width: 969px) {
   .priceMain {
     margin-left: 6%;
@@ -330,6 +429,7 @@
     margin-right: 5%;
   }
 }
+
 @media screen and (max-width: 912px) {
   .priceMain {
     margin-left: 5%;
@@ -352,11 +452,13 @@
     width: 80%;
   } */
 }
+
 @media screen and (max-width: 850px) {
   /* .exactResult {
     width: 100%;
   } */
 }
+
 @media screen and (max-width: 845px) {
   /* .exactResult {
     width: 50%;
@@ -382,6 +484,7 @@
     font-weight: bold;
   }
 }
+
 @media screen and (max-width: 768px) {
   /* .exactResult {
     width: 60%;
@@ -393,6 +496,7 @@
     width: 65%;
   }
 }
+
 @media screen and (max-width: 606px) {
   .number {
     width: 70px;
@@ -401,6 +505,7 @@
     width: 75%;
   }
 }
+
 @media screen and (max-width: 560px) {
   .exactResult {
     width: 85%;
@@ -415,6 +520,7 @@
     font-size: 1.6rem;
   }
 }
+
 @media screen and (max-width: 580px) {
   /* .exactResult {
     width: 65%;
@@ -426,9 +532,10 @@
     width: 80%;
   }
 }
+
 @media screen and (max-width: 460px) {
   .exactResult {
-    width: 55%;
+    width: 65%;
   }
 }
 
@@ -476,6 +583,7 @@
     font-weight: 800;
   }
 } */
+
 @media screen {
 }
 
